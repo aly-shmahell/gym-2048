@@ -117,7 +117,7 @@ class Base2048Env(gym.Env):
     if not board.all():
       tiles = self._sample_tiles(count)
       tile_locs = self._sample_tile_locations(board, count)
-      board[tile_locs] = tiles
+      board[tuple(tile_locs)] = tiles
 
   def _slide_left_and_merge(self, board):
     """Slide tiles on a grid to the left and merge."""
